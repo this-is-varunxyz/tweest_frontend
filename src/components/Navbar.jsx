@@ -381,8 +381,8 @@ const Navbar = () => {
             {/* Sidebar Header */}
             <div className='flex items-center justify-between px-6 py-4 border-b border-gray-200'>
               <div className='flex items-center space-x-3'>
-                <span className='text-2xl font-bold text-black' style={{fontFamily: 'Montserrat, sans-serif'}}>Roviks</span>
-                <div className='rubiks-cube'>
+                <span className='text-2xl font-bold text-black' style={{fontFamily: 'Montserrat, sans-serif'}}>Tweest</span>
+                {/* <div className='rubiks-cube'>
                   <div className='cube-face front'>
                     {[...Array(9)].map((_, i) => (
                       <div key={i} className='cube-sticker'></div>
@@ -413,7 +413,7 @@ const Navbar = () => {
                       <div key={i} className='cube-sticker'></div>
                     ))}
                   </div>
-                </div>
+                </div> */}
               </div>
               <button 
                 onClick={() => setVisible(false)}
@@ -530,7 +530,7 @@ const Navbar = () => {
             {/* Footer */}
             <div className='absolute bottom-0 left-0 right-0 p-6 bg-gray-50'>
               <div className='text-center text-sm text-gray-500'>
-                <p>&copy; 2024 Roviks. All rights reserved.</p>
+                <p>&copy; 2024 Tweest. All rights reserved.</p>
               </div>
             </div>
           </div>
