@@ -57,7 +57,7 @@ const Login = () => {
         <div className='text-center mb-6 sm:mb-8'>
           <div className='flex items-center justify-center space-x-2 sm:space-x-3 mb-4 sm:mb-6'>
             <div className='w-10 h-10 sm:w-12 sm:h-12 bg-black rounded-lg sm:rounded-xl flex items-center justify-center'>
-              <span className='text-white font-display font-bold text-xl sm:text-2xl'>R</span>
+              <span className='text-white font-display font-bold text-xl sm:text-2xl'>T</span>
             </div>
             <span className='text-2xl sm:text-3xl font-display font-bold text-black'>Tweest</span>
           </div>

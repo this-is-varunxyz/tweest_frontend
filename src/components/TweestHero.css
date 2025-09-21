@@ -5,7 +5,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.gta-hero-container {
+.tweest-hero-container {
   min-height: 100vh;
   position: relative;
   background: linear-gradient(
@@ -22,7 +22,7 @@
   overflow-x: clip; /* hide possible subpixel overflow from transforms */
 }
 
-.gta-overlay {
+.tweest-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -223,4 +223,3 @@
     margin-top: 30vh; /* Extra large screens (desktop) */
   }
 }
-

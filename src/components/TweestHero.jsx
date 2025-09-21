@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import './GTASixHero.css'
+import './TweestHero.css'
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger)
 
-const GTASixHero = () => {
+const TweestHero = () => {
   const containerRef = useRef(null)
   const overlayRef = useRef(null)
   const heroMainContainerRef = useRef(null)
@@ -210,8 +210,8 @@ const GTASixHero = () => {
   }, [])
 
   return (
-    <div className="gta-hero-container" ref={containerRef}>
-      <div className="gta-overlay" ref={overlayRef}></div>
+    <div className="tweest-hero-container" ref={containerRef}>
+      <div className="tweest-overlay" ref={overlayRef}></div>
       
       <div className="hero-1-container">
         <div className="hero-main-container" ref={heroMainContainerRef}>
@@ -219,14 +219,14 @@ const GTASixHero = () => {
             className="hero-main-logo"
             ref={heroMainLogoRef}
             draggable="false"
-            alt="gta logo"
+            alt="tweest logo"
           />
           <img
             className="hero-main-image"
             ref={heroMainImageRef}
             draggable="false"
             src="/backgroundnew.png"
-            alt="gta hero"
+            alt="tweest hero"
           />
         </div>
         <div className="hero-text-logo-container">
@@ -269,4 +269,4 @@ const GTASixHero = () => {
   )
 }
 
-export default GTASixHero
+export default TweestHero

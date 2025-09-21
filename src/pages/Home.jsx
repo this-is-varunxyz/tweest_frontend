@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import GTASixHero from '../components/GTASixHero'
+import TweestHero from '../components/TweestHero'
 import LatestCollection from '../components/LatestCollection'
 import BestSeller from '../components/BestSeller'
 import OurPolicy from '../components/OurPolicy'
@@ -20,7 +20,7 @@ const Home = () => {
   
   return (
     <div>
-      <GTASixHero />
+      <TweestHero />
       <LatestCollection/>
       <BestSeller/>
       <OurPolicy/>
