@@ -60,15 +60,15 @@ const TweestHero = () => {
       ease: "power1.inOut",
     })
 
-    // Create main scroll timeline
+    // Create main scroll timeline - REDUCED END VALUE
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: container,
         scrub: 1,
         pin: true,
-        anticipatePin: 1, // helps avoid jump during pinning
+        anticipatePin: 1,
         start: "top top",
-        end: "+=1600",
+        end: "+=800", // REDUCED from 1600 to 800
         ease: "none",
       },
     })
@@ -90,42 +90,42 @@ const TweestHero = () => {
     // Scale down animation
     tl.to(heroMainContainer, {
       scale: 1,
-      duration: 1,
+      duration: 0.5, // REDUCED from 1
     })
 
-    // Logo fade in on scroll (starts hidden, becomes visible)
+    // Logo fade in on scroll
     tl.fromTo(heroMainLogo, {
       opacity: 0,
     }, {
       opacity: 1,
-      duration: 0.8,
-    }, "<+=0.2")
+      duration: 0.4, // REDUCED from 0.8
+    }, "<+=0.1") // REDUCED delay
 
     // Logo fade out completely before text appears
     tl.to(heroMainLogo, {
       opacity: 0,
-      duration: 0.5,
-    }, "<+=1.0")
+      duration: 0.3, // REDUCED from 0.5
+    }, "<+=0.5") // REDUCED delay
 
     // Main image fade out
     tl.to(heroMainImage, {
       opacity: 0,
-      duration: 0.9,
-    }, "<+=0.5")
+      duration: 0.5, // REDUCED from 0.9
+    }, "<+=0.3") // REDUCED delay
 
     // Background size change
     tl.to(heroMainContainer, {
       backgroundSize: "28vh",
-      duration: 1.5,
-    }, "<+=0.2")
+      duration: 0.8, // REDUCED from 1.5
+    }, "<+=0.1") // REDUCED delay
 
     // Hero text appears (opacity) after logo is completely gone
     tl.to(heroText, {
       opacity: 1,
-      duration: 0.5,
-    }, "<+=2.0")
+      duration: 0.3, // REDUCED from 0.5
+    }, "<+=1.0") // REDUCED delay
 
-    // Hero text gradient animation (appears after logo is completely gone)
+    // Hero text gradient animation
     tl.fromTo(heroText, {
       backgroundImage: `radial-gradient(
         circle at 50% 200vh,
@@ -139,7 +139,7 @@ const TweestHero = () => {
        rgb(247, 77, 82) 50.011vh,
         rgb(145, 42, 105) 90.0183vh,
          rgba(32, 31, 66, 0) 140.599vh)`,
-      duration: 3,
+      duration: 1.5, // REDUCED from 3
     }, "<")
 
     // Purple logo animation
@@ -153,55 +153,18 @@ const TweestHero = () => {
       rgb(0, 0, 0) 62.9372%,
       rgba(0, 0, 0, 0) 81.4686%
     )`,
-      duration: 3,
-    }, "<0.2")
+      duration: 1.5, // REDUCED from 3
+    }, "<0.1") // REDUCED delay
 
-    // Hide main container
-    tl.set(heroMainContainer, { opacity: 0 })
+    // REMOVED THE EMPTY HERO-2 SECTION ANIMATIONS
+    // The rest of the animations for hero-2-container have been removed
+    // since it's empty and causing blank space
 
-    // Scale down hero 1 container
-    tl.to(container.querySelector('.hero-1-container'), { scale: 0.9, duration: 3 }, "<-=3")
-
-    // Apply mask to hero 1 container
-    tl.set(container.querySelector('.hero-1-container'), {
-      maskImage: `radial-gradient(circle at 50% 16.1137vh, rgb(0, 0, 0) 96.1949vh, rgba(0, 0, 0, 0) 112.065vh)`,
-    }, "<+=2.1")
-
-    // Animate mask
-    tl.to(container.querySelector('.hero-1-container'), {
-      maskImage: `radial-gradient(circle at 50% -40vh, rgb(0, 0, 0) 0vh, rgba(0, 0, 0, 0) 80vh)`,
-      duration: 2,
-    }, "<+=0.2")
-
-    // Hide text logo
-    tl.to(heroTextLogo, {
+    // Hide scroll indicator when animation is done
+    tl.to(scrollIndicator, {
       opacity: 0,
-      duration: 2,
-    }, "<1.5")
-
-    // Hide hero 1 container and show hero 2
-    tl.set(container.querySelector('.hero-1-container'), { opacity: 0 })
-    tl.set(hero2Container, { visibility: "visible" })
-
-    // Show hero 2 container
-    tl.to(hero2Container, { opacity: 1, duration: 3 }, "<+=0.2")
-
-    // Hero 2 gradient animation
-    tl.fromTo(hero2Container, {
-      backgroundImage: `radial-gradient(
-        circle at 50% 200vh,
-        rgba(255, 214, 135, 0) 0,
-        rgba(157, 47, 106, 0.5) 90vh,
-        rgba(157, 47, 106, 0.8) 120vh,
-        rgba(32, 31, 66, 0) 150vh
-      )`,
-    }, {
-      backgroundImage: `radial-gradient(circle at 50% 3.9575vh, rgb(255, 213, 133) 0vh,
-       rgb(247, 77, 82) 50.011vh,
-        rgb(145, 42, 105) 90.0183vh,
-         rgba(32, 31, 66, 0) 140.599vh)`,
-      duration: 3,
-    }, "<1.2")
+      duration: 0.3,
+    }, "<+=0.5")
 
     // Cleanup function
     return () => {
@@ -241,7 +204,8 @@ const TweestHero = () => {
         </div>
       </div>
       
-      <div className="hero-2-container" ref={hero2ContainerRef}>
+      {/* REMOVED EMPTY HERO-2-CONTAINER */}
+      <div className="hero-2-container" ref={hero2ContainerRef} style={{display: 'none'}}>
        
       </div>
       
